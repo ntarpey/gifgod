@@ -16,6 +16,7 @@ class UsersController < ApplicationController
   def show
   	@user = User.find(params[:id]) 
   	#find can smartly turn params[:id] from a str to int
+    @microposts = @user.microposts.paginate(page: params[:page])
   end
 
   def new
@@ -64,9 +65,9 @@ class UsersController < ApplicationController
     
 
     def signed_in_user
-     unless signed_in?
-       store_location
-        redirect_to signin_url, notice: "Please sign in."
+      unless signed_in?
+      store_location
+      redirect_to signin_url, notice: "Please sign in."
       end 
     end
 
