@@ -13,7 +13,7 @@ RSpec::Matchers.define :have_error_message do |message|
 end
 
 def full_title(page_title)
-  base_title = "Ruby on Rails Tutorial Sample App"
+  base_title = "Gif Sharing App"
   if page_title.empty?
     base_title
   else

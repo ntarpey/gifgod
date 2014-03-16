@@ -5,27 +5,37 @@
 				<%= render 'shared/user_info' %>
 			</section>
 			<section>
+				<%= render 'shared/stats' %>
+			</section>
+			<section>
 				<%= render 'shared/micropost_form' %>
 			</section>
 		</aside>
 		<div class="span8">
-			<h3>Micropost Feed</h3>
+			<h3>Gif Feed</h3>
 			<%= render 'shared/feed' %>
 		</div>
 	</div>
 <% else %>
 	<div class="center hero-unit">
-  		<h1>Welcome to the Sample App</h1>
+  		<h1>Welcome to Gif God</h1>
 
   		<h2>
     		This is the home page for the
-    		<a href="X">Twitter Clone</a>
-    		sample application.
+    		<u>Gif God</u>
+    		post and share application.  
   		</h2>
+
+  		<p>
+  			Post your favorite gifs from around the web to save for a rainy day or share with friends.
+  		</p>
 
   		<%= link_to "Sign up now!", signup_path, class: "btn btn-large btn-primary" %>
 	</div>
+	
 
-	<%= link_to image_tag("rails.png", alt: "Rails"), 'http://rubyonrails.org/' %>
+	<%= link_to image_tag("wrestling.gif", alt: "Gif"), 'http://google.com/' %>
+
+	
 <% end %>
 

@@ -1,11 +1,21 @@
 <li id="<%= feed_item.id %>">
+
 	<%= link_to gravatar_for(feed_item.user), feed_item.user %>
 	<span class="user">
 		<%= link_to feed_item.user.name, feed_item.user %>
-	</span>
-	<span class="content"><%= feed_item.content %></span>
+	</span> - 
+
+	<%-# Below is timestamp, below that is content to be posted above is user name -%>
+
 	<span class="timestamp">
-		Posted <%= time_ago_in_words(feed_item.created_at) %> ago.
+		 <%= time_ago_in_words(feed_item.created_at) %> ago.
+	</span>
+
+	<br>
+
+	<a href="<%= feed_item.content %>">Link to Source</a>
+	<span class="content">
+		<img src="<%= feed_item.content %>"; max-height="250px"; max-width="500px";/>
 	</span>
 
 	<% if current_user?(feed_item.user) %>
