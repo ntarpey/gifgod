@@ -2,6 +2,8 @@
 	<%= render 'shared/error_messages', object: f.object %>
 	<div class='field'>
 		<%= f.text_area :content, placeholder: "Post yr gif..." %>
+		<%= f.label :tags, "Tags (separated by commas)" %>
+		<%= f.text_field :tag_list %>
 		
 	</div>
 
