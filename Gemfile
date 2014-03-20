@@ -52,6 +52,8 @@ gem 'jbuilder', '1.0.2'
 gem 'acts-as-taggable-on' , '~> 2.4.1' #gem for tagging
 #gem 'protected_attributes' #protected attributes
 
+gem 'thread_safe', '0.2.0' #added to fix error
+
 group :doc do
   gem 'sdoc', '0.3.20', require: false
 end
