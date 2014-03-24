@@ -23,12 +23,6 @@ class MicropostsController < ApplicationController
     end
   end
 
-  #add editing functionality
-  #def edit 
-   # @micropost.edit
-    #@micropost = Micropost.find(params[:id])
-  #end
-
   def destroy
     @micropost.destroy
     redirect_to root_url
@@ -39,6 +33,21 @@ class MicropostsController < ApplicationController
       @microposts = Micropost.tagged_with(params[:tag])
     else
       @microposts = Micropost.postall
+    end
+  end
+
+  #add editing functionality
+  def edit 
+    @micropost.edit
+    @micropost = Micropost.find(params[:id])
+  end
+
+  def update
+    @micropost = Micropost.find(params[:id])
+    if @micropost.update_attributes(params[:article])
+      redirect_to @micropost, notice: "Updated Gif Post."
+    else
+      render :edit
     end
   end
 
